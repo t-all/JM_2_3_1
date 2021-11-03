@@ -30,8 +30,13 @@
         <td th:text="${user.getEmail()}"></td>
         <td><a th:href="@{/users/edit/{id}(id=${user.id})}">Edit</a></td>
         <td><a th:href="@{/users/delete/{id}(id=${user.id})}">Delete</a></td>
-        <td><form th:method="delete" th:action="@{/users/delete/{id}(id=${user.getId()})}">
-            <input type="submit" value="Delete"/></form>
+
+        <td>
+            <form th:method="delete" th:action="@{/users/{id}(id=${user.getId()})}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+
     </tr>
     </tbody>
 </table>
