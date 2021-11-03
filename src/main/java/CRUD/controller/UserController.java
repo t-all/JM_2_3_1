@@ -41,22 +41,23 @@ public class UserController {
         return "users/edit";
     }
 
-    @PostMapping("/{id}")
+    @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user) {
         userService.updateUser(user);
         return "redirect:/users";
     }
 
-//    @DeleteMapping("/delete/{id}")
-//    public String delete(@PathVariable("id") int id) {
-//        userService.deleteUser(id);
-//        return "redirect:/users";
-//    }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable("id") int id) {
         userService.deleteUser(id);
         return "redirect:/users";
     }
+
+//    @GetMapping("/delete/{id}")
+//    public String delete(@PathVariable("id") int id) {
+//        userService.deleteUser(id);
+//        return "redirect:/users";
+//    }
 
 }
