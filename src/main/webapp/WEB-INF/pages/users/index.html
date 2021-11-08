@@ -30,7 +30,6 @@
         <td th:text="${user.getEmail()}"></td>
 
         <td>
-
             <form th:action="@{/users/edit/{id}(id=${user.getId()})}">
                 <input type="submit" value="Update"/>
             </form>
